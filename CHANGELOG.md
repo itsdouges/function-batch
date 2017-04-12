@@ -8,6 +8,12 @@
 - Changes
 ```
 
+## [0.1.2] - 2017/04/12
+
+### Changed
+
+- Force version bump
+
 ## [0.1.1] - 2017/04/12
 
 ### Changed
