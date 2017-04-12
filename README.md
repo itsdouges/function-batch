@@ -25,11 +25,11 @@ yarn add function-batch
 ## Usage
 
 ```javascript
-import makeBatchCreator from 'function-batch';
+import createFunctionBatch from 'function-batch';
 
 const logArr = (arr) => console.log(arr);
-const createBatchedFunction = makeBatchCreator(200);
-const logArrBatched = createBatchedFunction(logArr);
+const functionBatch = createFunctionBatch(200);
+const logArrBatched = functionBatch(logArr);
 
 logArrBatched([1]);
 logArrBatched([2]);
@@ -45,13 +45,23 @@ Support for different kinds of args will be added if requested!
 
 ## Api
 
-```javascript
-type CreateBatchedFunction = function createBatchedFunction(Function);
-type Options = {
-  leading?: boolean,
-  trailing?: boolean,
-  maxWait?: number,
-};
+### function: createFunctionBatch(wait, options) => functionBatch
 
-function makeBatchCreator(wait: number, options: Options): CreateBatchedFunction;
-```
+| param   | type    | required |
+|---------|---------|----------|
+| wait    | number  | yes      |
+| options | Options | no       |
+
+### function: functionBatch(function) => function
+
+| param   | type      | required |
+|---------|-----------|----------|
+| function | Function | yes      |
+
+### object: Options
+
+| param    | type    | required |
+|----------|---------|----------|
+| leading  | boolean | no       |
+| trailing | boolean | no       |
+| maxWait  | number  | no       |
