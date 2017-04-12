@@ -9,3 +9,9 @@ script:
   - npm test
 after_success:
   - npm run codecov
+deploy:
+  provider: npm
+  email: "laheen@gmail.com"
+  api_key: $NPM_KEY
+  on:
+    tags: true
