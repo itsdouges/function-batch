@@ -4,7 +4,7 @@ import debounce from 'lodash.debounce';
 
 type debounceOptions = {
   leading?: boolean,
-  maxWait?: boolean,
+  maxWait?: number,
   trailing?: boolean,
 };
 

@@ -8,34 +8,45 @@
 
 > Creates a batched function that will batch up all calls to it, and then after a threshold call the original function with all the args combined.
 
-### How to Install
+## How to Install
+
+Using either npm or yarn:
 
 ```sh
-$ npm install function-batch
+npm install function-batch
+yarn add function-batch
 ```
 
-### Getting Started
+## Usage
 
-...
+```javascript
+import createBatchedFunction from 'function-batch';
 
-### How to Test
+const function = (arr) => console.log(arr);
+const batchedFunction = createBatchedFunction(function);
 
-Run one, or a combination of the following commands to lint and test your code:
+batchedFunction([1]);
+batchedFunction([2]);
+batchedFunction([3]);
+batchedFunction([4]);
 
-```sh
-$ npm run lint          # Lint the source code with ESLint
-$ npm test              # Run unit tests with Mocha
-$ npm run test:watch    # Run unit tests with Mocha, and watch files for changes
-$ npm run test:cover    # Run unit tests with code coverage by Istanbul
+// [1, 2, 3, 4]
 ```
 
-To launch the documentation site, run:
+Currently `function-batch` only supports batching up arrays.
+Support for different kinds of args will be added if requested!
 
-```sh
-$ npm install -g easystatic
-$ npm start
+### Options
+
+`function-batch` takes an optional `options` object, exactly the
+same as `debounce` from `lodash` takes.
+
+```javascript
+const options = {
+  leading?: false,
+  maxWait?: 500,
+  trailing?: true,
+};
+
+const func = createBatchedFunction(function, options);
 ```
-
-### License
-
-MIT © 2016 Michael Dougall

@@ -1,14 +1,15 @@
-## function-batch Change Log
+# CHANGELOG
 
-All notable changes to this project will be documented in this file.
+## Log structure
 
-### [Unreleased][unreleased]
+```md
+## [Unreleased|major.minor.patch] - yyyy/mm/dd
+### Added|Changed|Fixed|Removed
+- Changes
+```
 
-- ...
+## [0.1.0] - 2017/04/12
 
-### [v1.0.0] - 2016-01-01
+### Added
 
-- ...
-
-[unreleased]: https://github.com/madou/function-batch/compare/v1.0.0...HEAD
-[v0.0.1]: https://github.com/madou/function-batch/compare/v0.0.0...v1.0.0
+- Function batch to its own module.
