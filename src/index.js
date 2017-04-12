@@ -7,4 +7,4 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-export functionBatch from './functionBatch.js';
+export default './functionBatch.js';

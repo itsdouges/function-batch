@@ -8,6 +8,12 @@
 - Changes
 ```
 
+## [0.1.4] - 2017/04/12
+
+### Fixed
+
+- Module export
+
 ## [0.1.3] - 2017/04/12
 
 ### Changed
