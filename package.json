@@ -1,6 +1,6 @@
 {
   "name": "function-batch",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Creates a batched function that will batch up all calls to it, and then after a threshold call the original function with all the args combined.",
   "repository": "madou/function-batch",
   "author": "Michael Dougall",
