@@ -19,7 +19,9 @@
     "build": "node tools/build",
     "prepublish": "npm run build",
     "publish:docs": "easystatic deploy docs --repo madou/function-batch",
-    "start": "easystatic start docs"
+    "start": "easystatic start docs",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags"
   },
   "dependencies": {
     "lodash.debounce": "^4.0.8"
