@@ -8,32 +8,26 @@
 - Changes
 ```
 
+## [Unreleased][]
+### Added
+- Flowtypes to npm module
+
 ## [0.1.4] - 2017/04/12
-
 ### Fixed
-
 - Module export
 
 ## [0.1.3] - 2017/04/12
-
 ### Changed
-
 - Fixes deployment script
 
 ## [0.1.2] - 2017/04/12
-
 ### Changed
-
 - Force version bump
 
 ## [0.1.1] - 2017/04/12
-
 ### Changed
-
 - Force version bump
 
 ## [0.1.0] - 2017/04/12
-
 ### Added
-
 - Function batch to its own module
