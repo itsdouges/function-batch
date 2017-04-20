@@ -23,7 +23,7 @@
     "preversion": "npm test",
     "postversion": "git push && git push --tags"
   },
-  "peerDependencies": {
+  "dependencies": {
     "lodash": "^4.0.8"
   },
   "devDependencies": {
