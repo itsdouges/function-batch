@@ -1,6 +1,6 @@
 // @flow
 
-import debounce from 'lodash.debounce';
+import debounce from 'lodash/debounce';
 
 type debounceOptions = {
   leading?: boolean,

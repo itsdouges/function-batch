@@ -10,7 +10,7 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
 import proxyquire from 'proxyquire';
-import ddebounce from 'lodash.debounce';
+import ddebounce from 'lodash/debounce';
 
 const debounce = sinon.spy();
 
