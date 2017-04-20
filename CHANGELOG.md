@@ -14,6 +14,7 @@
 
 ### Changed
 - Lodash to be peer dependency
+- Api to be easier to use
 
 ## [0.1.4] - 2017/04/12
 ### Fixed
