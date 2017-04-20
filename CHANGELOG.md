@@ -1,12 +1,9 @@
 # CHANGELOG
 
-## Log structure
+All notable changes to this project will be documented in this file.
 
-```md
-## [Unreleased|major.minor.patch][] - yyyy-mm-dd
-### Added|Changed|Fixed|Removed
-- Changes
-```
+The format is based on [Keep a Changelog](http://keepachangelog.com/)
+and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.0.0][] - 2017-04-20
 ### Added
