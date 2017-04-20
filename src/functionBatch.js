@@ -8,22 +8,19 @@ type debounceOptions = {
   trailing?: boolean,
 };
 
-const proxyFunction = (wait: number, options: debounceOptions) => {
+const proxyFunction = (func: Function, wait: number, options: debounceOptions) => {
   let arrArg = [];
+  const callThenResetArgs = (...args) => {
+    const result = func(...args);
+    arrArg = [];
+    return result;
+  };
 
-  return (func: Function) => {
-    const callThenResetArgs = (...args) => {
-      const result = func(...args);
-      arrArg = [];
-      return result;
-    };
+  const debouncedFunc = debounce(callThenResetArgs, wait, options);
 
-    const debouncedFunc = debounce(callThenResetArgs, wait, options);
-
-    return (arr: Array<*>, ...args: any) => {
-      arrArg = arrArg.concat(arr);
-      debouncedFunc(arrArg, ...args);
-    };
+  return (arr: Array<*>, ...args: any) => {
+    arrArg = arrArg.concat(arr);
+    debouncedFunc(arrArg, ...args);
   };
 };
 

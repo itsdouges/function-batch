@@ -25,10 +25,9 @@ yarn add function-batch
 ## Usage
 
 ```javascript
-import createFunctionBatch from 'function-batch';
+import functionBatch from 'function-batch';
 
 const logArr = (arr) => console.log(arr);
-const functionBatch = createFunctionBatch(200);
 const logArrBatched = functionBatch(logArr);
 
 logArrBatched([1]);
@@ -39,24 +38,18 @@ logArrBatched([4]);
 // [1, 2, 3, 4]
 ```
 
-
 Currently `function-batch` only supports batching up arrays.
 Support for different kinds of args will be added if requested!
 
 ## Api
 
-### function: createFunctionBatch(wait, options) => functionBatch
+### function: functionBatch(func, wait, options) => functionBatch
 
-| param   | type    | required |
-|---------|---------|----------|
-| wait    | number  | yes      |
-| options | Options | no       |
-
-### function: functionBatch(function) => function
-
-| param   | type      | required |
-|---------|-----------|----------|
-| function | Function | yes      |
+| param   | type     | required |
+|---------|----------|----------|
+| func    | Function | yes      |
+| wait    | number   | yes      |
+| options | Options  | no       |
 
 ### object: Options
 

@@ -12,6 +12,9 @@
 ### Added
 - Flowtypes to npm module
 
+### Changed
+- Lodash to be peer dependency
+
 ## [0.1.4] - 2017/04/12
 ### Fixed
 - Module export

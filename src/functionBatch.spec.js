@@ -26,7 +26,7 @@ describe('function proxy', () => {
   let clock;
 
   before(() => {
-    wrappedFunction = functionBatch(debounceTime)(func);
+    wrappedFunction = functionBatch(func, debounceTime);
     clock = sinon.useFakeTimers();
   });
 
