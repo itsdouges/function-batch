@@ -43,7 +43,7 @@ Support for different kinds of args will be added if requested!
 
 ## Api
 
-### function: functionBatch(func, wait, options) => functionBatch
+### function: functionBatch(func, wait, options)
 
 | param   | type     | required |
 |---------|----------|----------|
