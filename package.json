@@ -20,8 +20,8 @@
     "prepublish": "npm run build",
     "publish:docs": "easystatic deploy docs --repo madou/function-batch",
     "start": "easystatic start docs",
-    "preversion": "npm test && npm run changelog",
-    "changelog": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md",
+    "preversion": "npm test",
+    "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md",
     "postversion": "git push && git push --tags"
   },
   "dependencies": {
