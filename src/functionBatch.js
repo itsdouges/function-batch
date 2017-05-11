@@ -8,13 +8,7 @@ type debounceOptions = {
   trailing?: boolean,
 };
 
-type Deferrable = {
-  promise: Promise<*>,
-  resolve: () => void,
-  reject: () => void,
-};
-
-const defer = (): Deferrable => {
+const defer = () => {
   let resolve;
   let reject;
 
@@ -25,9 +19,7 @@ const defer = (): Deferrable => {
 
   return {
     promise,
-    // $FlowFixMe
     resolve,
-    // $FlowFixMe
     reject,
   };
 };
@@ -40,9 +32,9 @@ const proxyFunction = (func: Function, wait: number, options: debounceOptions) =
     try {
       const result = func(...args);
       // Resolves with either a data, or a promise.
-      deferred.resolve(result);
+      deferred.resolve && deferred.resolve(result);
     } catch (err) {
-      deferred.reject(err);
+      deferred.reject && deferred.reject(err);
     }
 
     arrArg = [];
