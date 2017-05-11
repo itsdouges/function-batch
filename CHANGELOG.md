@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
+
+## [1.1.2][] - 2017-05-11
 ### Fixed
 - Flow errors
 
@@ -46,6 +48,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Function batch to its own module
 
 
-[Unreleased]: https://github.com/madou/function-batch/compare/v1.1.1...HEAD
+[Unreleased]: https://github.com/madou/function-batch/compare/v1.1.2...HEAD
+[1.1.2]: https://github.com/madou/function-batch/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/madou/function-batch/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/madou/function-batch/tree/v1.1.0
