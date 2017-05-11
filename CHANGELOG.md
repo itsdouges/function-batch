@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
+
+## [1.1.0][] - 2017-05-11
 ### Added
 - Function to return a promise that is resolved when the original function returns a value
 
@@ -36,3 +38,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.1.0][] - 2017-04-12
 ### Added
 - Function batch to its own module
+
+
+[Unreleased]: https://github.com/madou/function-batch/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/madou/function-batch/tree/v1.1.0
