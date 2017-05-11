@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
+
+## [1.1.1][] - 2017-05-11
 ### Fixed
 - Module export being broken
 
@@ -42,5 +44,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Function batch to its own module
 
 
-[Unreleased]: https://github.com/madou/function-batch/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/madou/function-batch/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/madou/function-batch/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/madou/function-batch/tree/v1.1.0
