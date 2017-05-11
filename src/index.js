@@ -1,3 +1,4 @@
 // @flow
 
-export default './functionBatch.js';
+import functionBatch from './functionBatch';
+export default functionBatch;

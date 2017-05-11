@@ -5,7 +5,7 @@ import ddebounce from 'lodash/debounce';
 
 const debounce = sinon.spy();
 
-const { default: functionBatch } = proxyquire('../src/functionBatch', {
+const { default: functionBatch } = proxyquire('../src', {
   'lodash/debounce': (...args) => debounce(...args) || ddebounce(...args),
 });
 
