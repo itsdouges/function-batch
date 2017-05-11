@@ -1,12 +1,3 @@
-/**
- * function-batch
- *
- * Copyright © 2016 Michael Dougall. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
 import { expect } from 'chai';
 import sinon from 'sinon';
 import proxyquire from 'proxyquire';
@@ -20,10 +11,15 @@ const { default: functionBatch } = proxyquire('../src/functionBatch', {
 
 describe('function proxy', () => {
   const debounceTime = 50;
-  const func = sinon.spy();
+  const func = sinon.stub();
+
 
   let wrappedFunction;
   let clock;
+
+  beforeEach(() => {
+    func.reset();
+  });
 
   before(() => {
     wrappedFunction = functionBatch(func, debounceTime);
@@ -60,5 +56,74 @@ describe('function proxy', () => {
     forwardTime();
 
     expect(func).to.have.been.calledWith([2]);
+  });
+
+  it('should resolve when the func is called', async () => {
+    const data = 'hello';
+    func.withArgs([2]).returns(data);
+
+    const promise = wrappedFunction([2]);
+    forwardTime();
+
+    const actual = await promise;
+
+    expect(actual).to.equal(data);
+  });
+
+  it('should resolve the same promise for multiple calls', async () => {
+    const data = 'goodbye';
+    func.withArgs([2, 9]).returns(data);
+
+    const promiseOne = wrappedFunction([2]);
+    const promiseTwo = wrappedFunction([9]);
+    forwardTime();
+
+    const actual = await Promise.all([promiseOne, promiseTwo]);
+
+    expect(actual).to.eql([data, data]);
+  });
+
+  it('should catch sync errors', async (done) => {
+    const error = new Error('oh no!');
+    func.withArgs([69]).throws(error);
+
+    const promise = wrappedFunction([69]);
+    forwardTime();
+
+    try {
+      await promise;
+    } catch (err) {
+      expect(err).to.eql(error);
+      done();
+    }
+  });
+
+  context('when func returns a promise', () => {
+    it('should catch async errors', async (done) => {
+      const error = new Error('ahhh no!');
+      func.withArgs([33]).returns(Promise.reject(error));
+
+      const promise = wrappedFunction([33]);
+      forwardTime();
+
+      try {
+        await promise;
+      } catch (err) {
+        expect(err).to.eql(error);
+        done();
+      }
+    });
+
+    it('should resolve async data', () => {
+      const data = 'konichiwa';
+      func.withArgs([2]).returns(Promise.resolve(data));
+
+      const promise = wrappedFunction([2]);
+      forwardTime();
+
+      return promise.then((actual) => {
+        expect(actual).to.equal(data);
+      });
+    });
   });
 });

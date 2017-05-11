@@ -10,16 +10,8 @@
 
 ## How to Install
 
-Using either npm:
-
 ```sh
 npm install function-batch
-```
-
-Or yarn:
-
-```sh
-yarn add function-batch
 ```
 
 ## Usage
@@ -27,15 +19,22 @@ yarn add function-batch
 ```javascript
 import functionBatch from 'function-batch';
 
-const logArr = (arr) => console.log(arr);
-const logArrBatched = functionBatch(logArr);
+const returnArr = (arr) => arr;
+const returnArrBatched = functionBatch(returnArr);
 
-logArrBatched([1]);
-logArrBatched([2]);
-logArrBatched([3]);
-logArrBatched([4]);
-
-// [1, 2, 3, 4]
+const value = Promise.all([
+  returnArrBatched([1]);
+  returnArrBatched([2]);
+  returnArrBatched([3]);
+  returnArrBatched([4]);
+])
+.then(([a, b, c, d]) => {
+// All resolve with the same value.
+// a = [1, 2, 3, 4]
+// b = [1, 2, 3, 4]
+// c = [1, 2, 3, 4]
+// d = [1, 2, 3, 4]
+});
 ```
 
 Currently `function-batch` only supports batching up arrays.
@@ -43,7 +42,7 @@ Support for different kinds of args will be added if requested!
 
 ## Api
 
-### function: functionBatch(func, wait, options)
+### function: functionBatch(func, wait, options): Promise<*>
 
 | param   | type     | required |
 |---------|----------|----------|
