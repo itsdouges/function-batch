@@ -6,7 +6,7 @@
 [![codecov](https://codecov.io/gh/madou/function-batch/branch/master/graph/badge.svg)](https://codecov.io/gh/madou/function-batch)
 [![Dependency Status](http://img.shields.io/david/madou/function-batch.svg?style=flat-square)](https://david-dm.org/madou/function-batch)
 
-> Creates a batched function that will batch up all calls to it, and then after a threshold call the original function with all the args combined.
+> Higher order function that will batch all calls to the wrapped function over a debounce, and then call the wrapped function once.
 
 ## How to Install
 
